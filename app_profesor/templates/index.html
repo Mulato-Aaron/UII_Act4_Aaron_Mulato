@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesores de la Empresa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .profesor-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .profesor-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+            transition: transform 0.2s;
+        }
+        .profesor-card:hover {
+            transform: translateY(-5px);
+        }
+        .profesor-card h2 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .profesor-card p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .profesor-card strong {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nuestros Profesores</h1>
+
+    <div class="profesor-container">
+        {% for profesor in profesores %}
+        <div class="profesor-card">
+            <h2>{{ profesor.nombre }}</h2>
+            <p><strong>Materia:</strong> {{ profesor.materia }}</p>
+            <p><strong>Email:</strong> {{ profesor.email }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
